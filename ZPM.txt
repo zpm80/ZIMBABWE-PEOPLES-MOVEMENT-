@@ -1,0 +1,812 @@
+I understand you want to make the website live for visitors to see. While I can't directly upload websites to hosting services, I'll provide you with the complete HTML code and step-by-step instructions on how to host it yourself.
+
+## Complete Website Code
+
+Here's the complete, optimized HTML code for your ZPM website:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zimbabwe People's Movement (ZPM) - The Recreation of Zimbabwe</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-green: #078930;
+            --primary-red: #D21034;
+            --primary-yellow: #FFCC00;
+            --primary-black: #000000;
+            --primary-white: #FFFFFF;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Montserrat', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            overflow-x: hidden;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header Styles */
+        header {
+            background-color: var(--primary-black);
+            color: var(--primary-white);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .header-top {
+            background-color: var(--primary-red);
+            padding: 8px 0;
+            text-align: center;
+            font-size: 14px;
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo img {
+            height: 60px;
+            margin-right: 15px;
+        }
+        
+        .logo-text {
+            font-weight: 700;
+            font-size: 18px;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            margin-left: 25px;
+        }
+        
+        .nav-links a {
+            color: var(--primary-white);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: var(--primary-yellow);
+        }
+        
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--primary-white);
+            font-size: 24px;
+            cursor: pointer;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://picsum.photos/seed/zimbabwe-landscape/1600/800.jpg');
+            background-size: cover;
+            background-position: center;
+            color: var(--primary-white);
+            padding: 100px 0;
+            text-align: center;
+        }
+        
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            color: var(--primary-yellow);
+        }
+        
+        .hero p {
+            font-size: 20px;
+            max-width: 800px;
+            margin: 0 auto 30px;
+        }
+        
+        .hero-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        
+        .btn {
+            padding: 12px 25px;
+            border: none;
+            border-radius: 4px;
+            font-weight: 600;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s;
+        }
+        
+        .btn-primary {
+            background-color: var(--primary-yellow);
+            color: var(--primary-black);
+        }
+        
+        .btn-primary:hover {
+            background-color: #e6b800;
+            transform: translateY(-2px);
+        }
+        
+        .btn-secondary {
+            background-color: var(--primary-green);
+            color: var(--primary-white);
+        }
+        
+        .btn-secondary:hover {
+            background-color: #067a29;
+            transform: translateY(-2px);
+        }
+        
+        .btn-constitution {
+            background-color: var(--primary-red);
+            color: var(--primary-white);
+        }
+        
+        .btn-constitution:hover {
+            background-color: #b80e2c;
+            transform: translateY(-2px);
+        }
+        
+        /* Leadership Section */
+        .leadership {
+            padding: 80px 0;
+            background-color: #f9f9f9;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+            font-size: 36px;
+            color: var(--primary-black);
+            position: relative;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background-color: var(--primary-red);
+        }
+        
+        .leadership-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-top: 50px;
+        }
+        
+        .leader-card {
+            background-color: var(--primary-white);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+        
+        .leader-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .leader-image {
+            position: relative;
+            height: 300px;
+            overflow: hidden;
+        }
+        
+        .leader-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+        
+        .leader-card:hover .leader-image img {
+            transform: scale(1.05);
+        }
+        
+        .leader-badge {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background-color: var(--primary-red);
+            color: var(--primary-white);
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 600;
+        }
+        
+        .leader-content {
+            padding: 30px;
+        }
+        
+        .leader-content h2 {
+            font-size: 28px;
+            margin-bottom: 10px;
+            color: var(--primary-black);
+        }
+        
+        .leader-content h3 {
+            font-size: 18px;
+            margin-bottom: 20px;
+            color: var(--primary-green);
+        }
+        
+        .leader-content p {
+            margin-bottom: 20px;
+            font-size: 16px;
+            line-height: 1.7;
+        }
+        
+        .contact-leader {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+        
+        /* Constitution Section */
+        .constitution {
+            padding: 80px 0;
+            background-color: var(--primary-white);
+        }
+        
+        .constitution-container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        .constitution-intro {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        
+        .constitution-content {
+            background-color: #f9f9f9;
+            border-radius: 8px;
+            padding: 40px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+        
+        .constitution-section {
+            margin-bottom: 40px;
+        }
+        
+        .constitution-section h3 {
+            color: var(--primary-red);
+            font-size: 24px;
+            margin-bottom: 20px;
+            border-bottom: 2px solid var(--primary-yellow);
+            padding-bottom: 10px;
+        }
+        
+        .constitution-section h4 {
+            color: var(--primary-green);
+            font-size: 20px;
+            margin: 20px 0 10px;
+        }
+        
+        .constitution-section p {
+            margin-bottom: 15px;
+            line-height: 1.8;
+        }
+        
+        .constitution-section ul {
+            margin-left: 20px;
+            margin-bottom: 15px;
+        }
+        
+        .constitution-section li {
+            margin-bottom: 8px;
+        }
+        
+        .constitution-nav {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        
+        .constitution-nav button {
+            padding: 8px 16px;
+            background-color: var(--primary-green);
+            color: var(--primary-white);
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        
+        .constitution-nav button:hover,
+        .constitution-nav button.active {
+            background-color: var(--primary-red);
+        }
+        
+        .constitution-section-content {
+            display: none;
+        }
+        
+        .constitution-section-content.active {
+            display: block;
+        }
+        
+        /* About Section */
+        .about {
+            padding: 80px 0;
+        }
+        
+        .about-content {
+            display: flex;
+            gap: 40px;
+            align-items: center;
+        }
+        
+        .about-text {
+            flex: 1;
+        }
+        
+        .about-image {
+            flex: 1;
+        }
+        
+        .about-image img {
+            width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        /* Values Section */
+        .values {
+            padding: 80px 0;
+            background-color: #f9f9f9;
+        }
+        
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+        
+        .value-card {
+            background-color: var(--primary-white);
+            border-radius: 8px;
+            padding: 30px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .value-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        
+        .value-icon {
+            font-size: 40px;
+            color: var(--primary-green);
+            margin-bottom: 20px;
+        }
+        
+        .value-card h3 {
+            margin-bottom: 15px;
+            color: var(--primary-black);
+        }
+        
+        /* Manifesto Section */
+        .manifesto {
+            padding: 80px 0;
+        }
+        
+        .manifesto-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+        
+        .manifesto-card {
+            background-color: var(--primary-white);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s;
+        }
+        
+        .manifesto-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .manifesto-header {
+            background-color: var(--primary-red);
+            color: var(--primary-white);
+            padding: 15px 20px;
+        }
+        
+        .manifesto-content {
+            padding: 20px;
+        }
+        
+        .manifesto-content ul {
+            padding-left: 20px;
+            margin-top: 10px;
+        }
+        
+        .manifesto-content li {
+            margin-bottom: 8px;
+        }
+        
+        /* Join Section */
+        .join {
+            padding: 80px 0;
+            background: linear-gradient(rgba(7, 137, 48, 0.9), rgba(7, 137, 48, 0.9)), url('https://picsum.photos/seed/zimbabwe-people/1600/800.jpg');
+            background-size: cover;
+            background-position: center;
+            color: var(--primary-white);
+            text-align: center;
+        }
+        
+        .join h2 {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+        
+        .join p {
+            font-size: 18px;
+            max-width: 700px;
+            margin: 0 auto 30px;
+        }
+        
+        .join-form {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 30px;
+            border-radius: 8px;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+            text-align: left;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+        
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: none;
+            border-radius: 4px;
+            font-family: inherit;
+        }
+        
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--primary-black);
+            color: var(--primary-white);
+            padding: 50px 0 20px;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 30px;
+        }
+        
+        .footer-column h3 {
+            margin-bottom: 20px;
+            color: var(--primary-yellow);
+        }
+        
+        .footer-column ul {
+            list-style: none;
+        }
+        
+        .footer-column ul li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-column a {
+            color: var(--primary-white);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-column a:hover {
+            color: var(--primary-yellow);
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: var(--primary-red);
+            color: var(--primary-white);
+            border-radius: 50%;
+            transition: background-color 0.3s;
+        }
+        
+        .social-links a:hover {
+            background-color: var(--primary-yellow);
+            color: var(--primary-black);
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 14px;
+        }
+        
+        /* WhatsApp Button */
+        .whatsapp-btn {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 60px;
+            height: 60px;
+            background-color: #25D366;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 30px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+            z-index: 1000;
+            transition: transform 0.3s;
+        }
+        
+        .whatsapp-btn:hover {
+            transform: scale(1.1);
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .about-content {
+                flex-direction: column;
+            }
+            
+            .hero h1 {
+                font-size: 36px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 28px;
+            }
+            
+            .hero p {
+                font-size: 16px;
+            }
+            
+            .section-title {
+                font-size: 28px;
+            }
+            
+            .join h2 {
+                font-size: 28px;
+            }
+            
+            .leadership-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .constitution-content {
+                padding: 20px;
+            }
+        }
+        
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.7);
+            z-index: 2000;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .modal-content {
+            background-color: white;
+            padding: 30px;
+            border-radius: 8px;
+            max-width: 500px;
+            width: 90%;
+            position: relative;
+        }
+        
+        .close-modal {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            font-size: 24px;
+            cursor: pointer;
+            color: #555;
+        }
+        
+        .modal h3 {
+            margin-bottom: 20px;
+            color: var(--primary-black);
+        }
+        
+        .modal p {
+            margin-bottom: 20px;
+        }
+        
+        .modal-buttons {
+            display: flex;
+            gap: 15px;
+            justify-content: flex-end;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-top">
+            <div class="container">
+                The Recreation of Zimbabwe | Kusikwa kwezimbabwe itsva | Ukwakhiwa kwe Zimbabwe entsha
+            </div>
+        </div>
+        <div class="container">
+            <nav>
+                <div class="logo">
+                    <img src="https://z-cdn-media.chatglm.cn/files/78580a17-559b-4f2d-b218-62c64f75b617_7d6ccd85-6b49-4880-a3ff-2a02a0c6a944.jpeg?auth_key=1790953645-7c0c830379a04a56a4168fb36a9e2001-0-fddb26be84560efc846b71f7735fa23e" alt="ZPM Logo">
+                    <div class="logo-text">ZIMBABWE PEOPLE'S MOVEMENT</div>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#leadership">Leadership</a></li>
+                    <li><a href="#constitution">Constitution</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#values">Values</a></li>
+                    <li><a href="#manifesto">Manifesto</a></li>
+                    <li><a href="#join">Join Us</a></li>
+                </ul>
+                <button class="mobile-menu-btn"><i class="fas fa-bars"></i></button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <h1>ZIMBABWE PEOPLE'S MOVEMENT</h1>
+            <p>Building a united, non-racial, non-sexist and democratic Zimbabwe where the people as a whole shall govern and all shall enjoy equal rights</p>
+            <div class="hero-buttons">
+                <a href="#join" class="btn btn-primary">Join Us</a>
+                <a href="#manifesto" class="btn btn-secondary">Our Manifesto</a>
+                <a href="#constitution" class="btn btn-constitution">View Constitution</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Leadership Section -->
+    <section id="leadership" class="leadership">
+        <div class="container">
+            <h2 class="section-title">Our Leadership</h2>
+            <div class="leadership-grid">
+                <!-- President Card -->
+                <div class="leader-card">
+                    <div class="leader-image">
+                        <img src="https://z-cdn-media.chatglm.cn/files/9ca19c0f-0c4a-4390-98e1-609e565d2dac_IMG_0108.jpeg?auth_key=1790954012-6c250d9fc4644de48ba7788427fffae4-0-8a5e00f22b995ee9abeda5c7a0ee692e" alt="President Lawrence Tafadzwa Ruwende">
+                        <span class="leader-badge">President</span>
+                    </div>
+                    <div class="leader-content">
+                        <h2>Lawrence Tafadzwa Ruwende</h2>
+                        <h3>Leading Zimbabwe Towards a Brighter Future</h3>
+                        <p>President Lawrence Tafadzwa Ruwende is the visionary leader of the Zimbabwe People's Movement. With a deep commitment to democracy, social justice, and economic freedom, he has dedicated his life to fighting for the rights and liberation of all Zimbabweans.</p>
+                        <p>Under his leadership, ZPM has emerged as a powerful force for change, advocating for the complete transformation of Zimbabwe into a united, non-racial, non-sexist, and democratic nation where all citizens can thrive and prosper.</p>
+                        <div class="contact-leader">
+                            <a href="https://wa.me/96555347913" target="_blank" class="btn btn-primary">
+                                <i class="fab fa-whatsapp"></i> Contact President
+                            </a>
+                            <a href="mailto:tafiruwende@gmail.com" class="btn btn-secondary">
+                                <i class="fas fa-envelope"></i> Send Email
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Vice President Card -->
+                <div class="leader-card">
+                    <div class="leader-image">
+                        <img src="https://z-cdn-media.chatglm.cn/files/68939bc8-8b02-4812-a7ad-7aa2cc5af73c_283c995f-55f4-4264-8016-497934d0f383.jpeg?auth_key=1790954012-6c250d9fc4644de48ba7788427fffae4-0-8a5e00f22b995ee9abeda5c7a0ee692e" alt="Vice President Debra Akue Chidhakwa">
+                        <span class="leader-badge">Vice President</span>
+                    </div>
+                    <div class="leader-content">
+                        <h2>Debra Akue Chidhakwa</h2>
+                        <h3>Champion of Social Justice and Equality</h3>
+                        <p>Vice President Debra Akue Chidhakwa brings a wealth of experience and passion for social justice to the ZPM leadership team. Her tireless advocacy for women's rights and equality has been instrumental in shaping ZPM's inclusive policies.</p>
+                        <p>With a background in community development and education, she has worked extensively with grassroots organizations across Zimbabwe, empowering marginalized communities and advocating for policies that promote social equity and economic opportunity for all citizens.</p>
+                        <div class="contact-leader">
+                            <a href="https://wa.me/96555347913" target="_blank" class="btn btn-primary">
+                                <i class="fab fa-whatsapp"></i> Contact VP
+                            </a>
+                            <a href="mailto:tafiruwende@gmail.com" class="btn btn-secondary">
+                                <i class="fas fa-envelope"></i> Send Email
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Constitution Section -->
+    <section id="constitution" class="constitution">
+        <div class="container">
+            <h2 class="section-title">ZPM Constitution</h2>
+            <div class="constitution-container">
+                <div class="constitution-intro">
+                    <p>The supreme law
